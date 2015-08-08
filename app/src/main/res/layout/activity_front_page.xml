@@ -24,12 +24,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:background="@drawable/hobby1"
-                android:layout_marginBottom="3dp"/>
+                android:layout_marginBottom="3dp"
+                android:id="@+id/wind_surfing"
+                android:onClick="launchHobby"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:layout_marginBottom="3dp"
-                android:background="@drawable/hobby2"/>
+                android:background="@drawable/hobby2"
+                android:id="@+id/drag_racing"
+                android:onClick="launchHobby"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="130dp"

@@ -48,14 +48,24 @@ public class FrontPageActivity extends Activity {
     public void launchHobby(View view){
         switch (view.getId()){
             case R.id.golf:
-                Intent i = new Intent(this, HobbyActivity.class);
-                i.putExtra("hobby_name", "Golf");
-                startActivity(i);
+                Intent a = new Intent(this, HobbyActivity.class);
+                a.putExtra("hobby_name", "Golf");
+                startActivity(a);
+                break;
+            case R.id.wind_surfing:
+                Intent b = new Intent(this, HobbyActivity.class);
+                b.putExtra("hobby_name", "Wind Surfing");
+                startActivity(b);
+                break;
+            case R.id.drag_racing:
+                Intent c = new Intent(this, HobbyActivity.class);
+                c.putExtra("hobby_name", "Drag Racing");
+                startActivity(c);
                 break;
             case R.id.paddle:
-                Intent p = new Intent(this, HobbyActivity.class);
-                p.putExtra("hobby_name", "Paddle Boarding");
-                startActivity(p);
+                Intent d = new Intent(this, HobbyActivity.class);
+                d.putExtra("hobby_name", "Paddle Boarding");
+                startActivity(d);
                 break;
 
         }
