@@ -10,7 +10,7 @@ public class GenerateOAuth {
     public static String generateAuthorization() {
         String s = "OAuth oauth_consumer_key=\"" + consumerKey +"\"";
         s += ", oauth_signature_method=\"PLAINTEXT\"";
-        s += ", oauth_signature=\"" + consumerSecret + "\"&";
+        s += ", oauth_signature=\"" + consumerSecret + "&\"";
         return s;
     }
 }
