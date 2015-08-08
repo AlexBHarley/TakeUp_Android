@@ -28,10 +28,7 @@ public class HobbyActivity extends Activity {
         HttpClient httpClient = new DefaultHttpClient();
 
         HttpGet httpget = new HttpGet("http://api.trademe.co.nz/v1/Search/General.xml?search_string=iphone");
-        httpget.addHeader("auth",
-                          "Authorization: OAuth oauth_consumer_key=CE371CEC569880E6413594C1E27B6ADA" +
-                        ", oauth_signature_method=PLAINTEXT, oauth_signature=38F2375F4D3324E9AFAE548603341F26&"
-        );
+        httpget.addHeader("Authorization", GenerateOAuth.generateAuthorization());
         HttpResponse response;
 
         try {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
@@ -27,20 +28,23 @@ public class MainActivity extends Activity {
         HttpClient httpClient = new DefaultHttpClient();
 
         HttpGet httpget = new HttpGet("http://api.trademe.co.nz/v1/Search/General.xml?search_string=iphone");
-        httpget.addHeader("auth",
-                "Authorization: OAuth oauth_consumer_key=CE371CEC569880E6413594C1E27B6ADA" +
-                        ", oauth_signature_method=PLAINTEXT, oauth_signature=38F2375F4D3324E9AFAE548603341F26&"
-        );
+        httpget.addHeader("Authorization", GenerateOAuth.generateAuthorization());
         HttpResponse response;
+
+        TextView s = (TextView) findViewById(R.id.thi);
 
         try {
             response = httpClient.execute(httpget);
             HttpEntity entity = response.getEntity();
             Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_LONG).show();
+            s.setText(entity.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+
     }
 
 
