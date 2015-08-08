@@ -15,8 +15,7 @@ import java.util.Objects;
  */
 public class HobbyActivity extends Activity{
     HobbyClass hobbyName = new HobbyClass();
-    List<Object> information = new ArrayList<>();
-
+    List<HobbyObject> categories = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,9 @@ public class HobbyActivity extends Activity{
         HobbyObject PaddleBoard = new HobbyObject();
         HobbyObject Paddle = new HobbyObject();
         HobbyObject Leash = new HobbyObject();
-
+        /* All of these will be calls to the website
+        Each for Title, Price, Picture
+         */
         PaddleBoard.setNameOne("Starboard Atlas Paddle");
         PaddleBoard.setPriceOne("from $899");
         PaddleBoard.setImageOne();
@@ -49,10 +50,13 @@ public class HobbyActivity extends Activity{
         Leash.setPriceTwo("from $49");
         Leash.setImageTwo();
 
-        information.add(hobbyName);
-        information.add(PaddleBoard);
-        information.add(Paddle);
-        information.add(Leash);
+        categories.add(PaddleBoard);
+        categories.add(Paddle);
+        categories.add(Leash);
+        hobbyName.setSubCategories(categories);
+
+
+        // hobbuName.getCategories(categories).getView();
 
     }
 }
