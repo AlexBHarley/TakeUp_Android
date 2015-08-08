@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
  * Created by alex on 8/08/15.
  */
 
-//test
+//test2
 public class HobbyObject {
     private String nameOne;
     private String nameTwo;
