@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">HobbyApp</string>
+    <string name="app_name">Take up</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_front_page">Take Up</string>
+    <string name="title_activity_front_page">ActivityFrontPage</string>
 </resources>

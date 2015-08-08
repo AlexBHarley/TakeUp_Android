@@ -14,6 +14,7 @@ public class FrontPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
 
+        //Background color
         RelativeLayout background = (RelativeLayout) findViewById(R.id.relative_background);
         background.setBackgroundColor(Color.GREEN);
 
