@@ -1,25 +1,29 @@
 package sot.hobbyapp;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
-//test
-//hey this is test no2
-
-public class MainActivity extends Activity {
+public class FrontPageActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_front_page);
+
+        //Layout
+        RelativeLayout testLayout = new RelativeLayout(this);
+        testLayout.setBackgroundColor(Color.GREEN);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_front_page, menu);
         return true;
     }
 
