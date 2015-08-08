@@ -13,6 +13,7 @@ import java.util.Objects;
 /**
  * Created by Craig on 8/08/2015.
  */
+
 public class HobbyActivity extends Activity{
     HobbyClass hobbyName = new HobbyClass();
     List<HobbyObject> categories = new ArrayList<>();
