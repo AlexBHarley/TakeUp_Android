@@ -32,24 +32,24 @@ public class HobbyActivity extends Activity{
          */
         PaddleBoard.setNameOne("Starboard Atlas Paddle");
         PaddleBoard.setPriceOne("from $899");
-        PaddleBoard.setImageOne();
+        //PaddleBoard.setImageOne();
         PaddleBoard.setNameTwo("Skull Paddleboard");
         PaddleBoard.setPriceTwo("from $1299");
-        PaddleBoard.setImageTwo();
+       //PaddleBoard.setImageTwo();
 
         Paddle.setNameOne("Bote Axe Paddle");
         Paddle.setPriceOne("from $499");
-        Paddle.setImageOne();
+        //Paddle.setImageOne();
         Paddle.setNameTwo("Pacific Paddle");
         Paddle.setPriceTwo("from $299");
-        Paddle.setImageTwo();
+        //Paddle.setImageTwo();
 
         Leash.setNameOne("Keeper Combo Kit");
         Leash.setPriceOne("from $29");
-        Leash.setImageOne();
+        //Leash.setImageOne();
         Leash.setNameTwo("SUP Surf Leash");
         Leash.setPriceTwo("from $49");
-        Leash.setImageTwo();
+        //Leash.setImageTwo();
 
         categories.add(PaddleBoard);
         categories.add(Paddle);
@@ -57,7 +57,7 @@ public class HobbyActivity extends Activity{
         hobbyName.setSubCategories(categories);
 
 
-        // hobbuName.getCategories(categories).getView();
+        // hobbyName.getCategories(categories).getView();
 
     }
 }
