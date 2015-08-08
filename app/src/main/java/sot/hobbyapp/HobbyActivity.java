@@ -24,6 +24,10 @@ public class HobbyActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hobby);
         Intent hobby_name = getIntent();
+
+        //Create new Action bar
+        getActionBar().setTitle(hobby_name.getStringExtra("hobby_name"));
+
         hobbyName.setName(hobby_name.getStringExtra("hobby_name"));
         HobbyObject PaddleBoard = new HobbyObject();
         HobbyObject Paddle = new HobbyObject();
