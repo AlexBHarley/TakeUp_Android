@@ -14,16 +14,16 @@ public class FrontPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
 
-        //Layout
-        RelativeLayout testLayout = new RelativeLayout(this);
-        testLayout.setBackgroundColor(Color.GREEN);
+        //Background color
+        RelativeLayout background = (RelativeLayout) findViewById(R.id.relative_background);
+        background.setBackgroundColor(Color.GREEN);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_front_page, menu);
+        //getMenuInflater().inflate(R.menu.menu_front_page, menu);
         return true;
     }
 
