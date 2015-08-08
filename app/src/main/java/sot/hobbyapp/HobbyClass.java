@@ -9,6 +9,7 @@ import java.util.List;
 public class HobbyClass {
     private String name;
     private HobbyObject[] items;
+    private List<HobbyObject> subCategories;
 
     public List<HobbyObject> getSubCategories() {
         return subCategories;
@@ -17,8 +18,6 @@ public class HobbyClass {
     public void setSubCategories(List<HobbyObject> subCategories) {
         this.subCategories = subCategories;
     }
-
-    private List<HobbyObject> subCategories = new ArrayList<>();
 
     public String getName() {
         return name;
