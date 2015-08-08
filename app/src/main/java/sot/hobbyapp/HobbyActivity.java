@@ -18,7 +18,7 @@ public class HobbyActivity extends Activity{
         setContentView(R.layout.activity_hobby);
         super.onCreate(savedInstanceState);
         Intent hobby_name = getIntent();
-        hobbyName.setText(hobby_name.getStringExtra("hobby_name"))
+        hobbyName.setText(hobby_name.getStringExtra("hobby_name"));
 
 
     }
