@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 //test
+//hey this is test no2
 
 public class MainActivity extends Activity {
 
