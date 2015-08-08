@@ -8,13 +8,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Craig on 8/08/2015.
  */
 public class HobbyActivity extends Activity{
     HobbyClass hobbyName = new HobbyClass();
-    List information = new ();
+    List<Object> information = new ArrayList<>();
 
 
     @Override
@@ -48,10 +49,10 @@ public class HobbyActivity extends Activity{
         Leash.setPriceTwo("from $49");
         Leash.setImageTwo();
 
-        information.add(hobbyName);
-        information.add(PaddleBoard);
-        information.add(Paddle);
-        information.add(Leash);
+        information.add(new HobbyObject(hobbyName));
+        information.add(new HobbyObject(PaddleBoard));
+        information.add(new HobbyObject(Paddle));
+        information.add(new HobbyObject(Leash));
 
     }
 }
