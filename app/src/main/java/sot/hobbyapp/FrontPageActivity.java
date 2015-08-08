@@ -17,7 +17,6 @@ public class FrontPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
 
-
     }
 
     @Override
