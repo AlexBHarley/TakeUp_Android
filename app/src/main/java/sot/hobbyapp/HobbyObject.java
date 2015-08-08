@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 /**
  * Created by alex on 8/08/15.
  */
+
 public class HobbyObject {
     private String nameOne;
     private String nameTwo;
@@ -45,19 +46,19 @@ public class HobbyObject {
         this.nameTwo = nameTwo;
     }
 
-    public double getPriceOne() {
+    public String getPriceOne() {
         return priceOne;
     }
 
-    public void setPriceOne(double priceOne) {
+    public void setPriceOne(String priceOne) {
         this.priceOne = priceOne;
     }
 
-    public double getPriceTwo() {
+    public String getPriceTwo() {
         return priceTwo;
     }
 
-    public void setPriceTwo(double priceTwo) {
+    public void setPriceTwo(String priceTwo) {
         this.priceTwo = priceTwo;
     }
 }

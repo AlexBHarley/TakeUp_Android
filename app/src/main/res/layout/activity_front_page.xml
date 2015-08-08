@@ -35,6 +35,7 @@
                 android:layout_height="130dp"
                 android:id="@+id/paddle"
                 android:background="@drawable/hobby3"
+                android:onClick="launchHobby"
                 android:layout_marginBottom="3dp"/>
             <ImageView
                 android:layout_width="match_parent"

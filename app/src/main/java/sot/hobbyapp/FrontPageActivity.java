@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+/**
+ * Created by Galvin and Alex on 8/08/2015.
+ */
+
 public class FrontPageActivity extends Activity {
 
     @Override
@@ -44,14 +48,15 @@ public class FrontPageActivity extends Activity {
     public void launchHobby(View view){
         switch (view.getId()){
             case R.id.golf:
-                Intent i = new Intent(this, HobbyTest.class);
-                i.putExtra("name", "golf");
+                Intent i = new Intent(this, HobbyActivity.class);
+                i.putExtra("hobby_name", "Golf");
                 startActivity(i);
                 break;
             case R.id.paddle:
                 Intent p = new Intent(this, HobbyActivity.class);
                 p.putExtra("hobby_name", "Paddle Boarding");
                 startActivity(p);
+                break;
 
         }
     }
