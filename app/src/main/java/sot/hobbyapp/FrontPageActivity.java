@@ -12,11 +12,10 @@ public class FrontPageActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_front_page);
+        setContentView(R.layout.activity_front_page);
 
-        //Layout
-        RelativeLayout testLayout = new RelativeLayout(this);
-        testLayout.setBackgroundColor(Color.GREEN);
+        RelativeLayout background = (RelativeLayout) findViewById(R.id.relative_background);
+        background.setBackgroundColor(Color.GREEN);
 
     }
 
