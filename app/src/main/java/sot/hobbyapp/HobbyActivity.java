@@ -49,10 +49,10 @@ public class HobbyActivity extends Activity{
         Leash.setPriceTwo("from $49");
         Leash.setImageTwo();
 
-        information.add(new HobbyObject(hobbyName));
-        information.add(new HobbyObject(PaddleBoard));
-        information.add(new HobbyObject(Paddle));
-        information.add(new HobbyObject(Leash));
+        information.add(hobbyName);
+        information.add(PaddleBoard);
+        information.add(Paddle);
+        information.add(Leash);
 
     }
 }
