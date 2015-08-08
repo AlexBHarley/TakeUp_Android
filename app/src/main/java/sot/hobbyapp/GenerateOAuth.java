@@ -8,7 +8,7 @@ public class GenerateOAuth {
     private static String consumerSecret = "38F2375F4D3324E9AFAE548603341F26";
 
     public static String generateAuthorization() {
-        String s = "Authorization: OAuth oauth_consumer_key=\"" + consumerKey +"\"";
+        String s = "OAuth oauth_consumer_key=\"" + consumerKey +"\"";
         s += ", oauth_signature_method=\"PLAINTEXT\"";
         s += ", oauth_signature=\"" + consumerSecret + "\"&";
         return s;
