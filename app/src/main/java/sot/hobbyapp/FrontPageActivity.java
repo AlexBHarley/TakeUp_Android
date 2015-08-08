@@ -1,10 +1,13 @@
 package sot.hobbyapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 public class FrontPageActivity extends Activity {
@@ -13,10 +16,6 @@ public class FrontPageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
-
-        //Background color
-        RelativeLayout background = (RelativeLayout) findViewById(R.id.relative_background);
-        background.setBackgroundColor(Color.GREEN);
 
     }
 
@@ -40,5 +39,20 @@ public class FrontPageActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void launchHobby(View view){
+        switch (view.getId()){
+            case R.id.golf:
+                Intent i = new Intent(this, HobbyTest.class);
+                i.putExtra("name", "golf");
+                startActivity(i);
+                break;
+            case R.id.paddle:
+                Intent p = new Intent(this, HobbyActivity.class);
+                p.putExtra("hobby_name", "Paddle Boarding");
+                startActivity(p);
+
+        }
     }
 }
