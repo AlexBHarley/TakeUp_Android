@@ -12,7 +12,7 @@ public class FrontPageActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_front_page);
+        //setContentView(R.layout.activity_front_page);
 
         //Layout
         RelativeLayout testLayout = new RelativeLayout(this);
@@ -23,7 +23,7 @@ public class FrontPageActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_front_page, menu);
+        //getMenuInflater().inflate(R.menu.menu_front_page, menu);
         return true;
     }
 

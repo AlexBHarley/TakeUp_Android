@@ -4,6 +4,16 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.IOException;
 
 //test
 //hey this is test no2
@@ -14,7 +24,29 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        HttpClient httpClient = new DefaultHttpClient();
+
+        HttpGet httpget = new HttpGet("http://api.trademe.co.nz/v1/Search/General.xml?search_string=iphone");
+        httpget.addHeader("Authorization", GenerateOAuth.generateAuthorization());
+        HttpResponse response;
+
+        TextView s = (TextView) findViewById(R.id.thi);
+
+        try {
+            response = httpClient.execute(httpget);
+            HttpEntity entity = response.getEntity();
+            Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_LONG).show();
+            s.setText(entity.toString());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
