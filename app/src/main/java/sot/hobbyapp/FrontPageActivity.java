@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+/**
+ * Created by Galvin and Alex on 8/08/2015.
+ */
+
 public class FrontPageActivity extends Activity {
 
     @Override
