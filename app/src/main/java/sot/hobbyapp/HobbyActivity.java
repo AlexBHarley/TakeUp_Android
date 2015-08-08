@@ -25,6 +25,9 @@ public class HobbyActivity extends Activity{
         setContentView(R.layout.activity_hobby);
         Intent hobby_name = getIntent();
 
+        //Create up navigation
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Create new Action bar
         getActionBar().setTitle(hobby_name.getStringExtra("hobby_name"));
 
