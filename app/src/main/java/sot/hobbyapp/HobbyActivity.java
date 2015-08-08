@@ -16,8 +16,9 @@ import java.util.Objects;
  */
 
 public class HobbyActivity extends Activity{
-    HobbyClass hobbyName = new HobbyClass();
-    List<HobbyObject> categories = new ArrayList<>();
+    private HobbyClass hobbyName = new HobbyClass();
+    private List<HobbyObject> categories = new ArrayList<>();
+    private SwipeMenu
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +62,11 @@ public class HobbyActivity extends Activity{
         categories.add(Leash);
         hobbyName.setSubCategories(categories);
 
+        /* Some loop of getView
+        hobbyName.getCategories(categories).getView();
 
-        // hobbyName.getCategories(categories).getView();
 
+
+        */
     }
 }

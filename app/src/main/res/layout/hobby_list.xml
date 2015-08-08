@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/itemone_buy_button"
-            android:text="Open"
+            android:text="OPEN"
             android:onClick="itemone_buynow"/>
 
     </LinearLayout>
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/itemtwo_buy_button"
-            android:text="Open"
+            android:text="OPEN"
             android:onClick="itemtwo_buynow"/>
 
     </LinearLayout>
