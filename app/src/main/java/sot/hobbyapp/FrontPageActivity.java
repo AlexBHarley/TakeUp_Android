@@ -57,9 +57,9 @@ public class FrontPageActivity extends Activity {
                 b.putExtra("hobby_name", "Wind Surfing");
                 startActivity(b);
                 break;
-            case R.id.drag_racing:
+            case R.id.boxing:
                 Intent c = new Intent(this, HobbyActivity.class);
-                c.putExtra("hobby_name", "Drag Racing");
+                c.putExtra("hobby_name", "Boxing");
                 startActivity(c);
                 break;
             case R.id.paddle:
