@@ -18,7 +18,7 @@ import java.util.Objects;
 public class HobbyActivity extends Activity{
     private HobbyClass hobbyName = new HobbyClass();
     private List<HobbyObject> categories = new ArrayList<>();
-    private SwipeMenu
+    private SwipeMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
