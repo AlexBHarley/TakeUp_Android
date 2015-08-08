@@ -13,7 +13,7 @@ import java.util.Objects;
 /**
  * Created by Craig on 8/08/2015.
  */
-//linux test 3
+
 public class HobbyActivity extends Activity{
     HobbyClass hobbyName = new HobbyClass();
     List<Object> information = new ArrayList<>();
