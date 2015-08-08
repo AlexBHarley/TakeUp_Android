@@ -1,9 +1,11 @@
 package sot.hobbyapp;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
 public class FrontPageActivity extends Activity {
 
@@ -11,6 +13,11 @@ public class FrontPageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
+
+        //Layout
+        RelativeLayout testLayout = new RelativeLayout(this);
+        testLayout.setBackgroundColor(Color.GREEN);
+
     }
 
     @Override
