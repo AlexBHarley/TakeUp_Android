@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +31,12 @@ public class HobbyActivity extends Activity{
 
     HobbyClass hobbyName = new HobbyClass();
     List<HobbyObject> categories = new ArrayList<>();
-    final List<ListingData> listings = new ArrayList<>();
-
+    final List<SubCategoryRow> listings = new ArrayList<>();
+    ListView listView;
     final static String consumerKey = "D878095ABE608E6AA6E5C47EBAFAC669";
     static final String consumerSecret = "8745D63A410A399375192C6960298D49%26";
     String search_string;
+    ListViewAdapter adapter;
 
     String s = "https://api.trademe.co.nz/v1/Search/General.json?oauth_consumer_key=" + consumerKey + "&oauth_signature_method=PLAINTEXT&oauth_signature=" + consumerSecret + "&"
             + "search_string=" + search_string + "&";
@@ -43,19 +45,22 @@ public class HobbyActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hobby);
+        listView = (ListView) findViewById(R.id.listView);
         Intent hobby_name = getIntent();
-
-        //Create up navigation
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-
-        new DownloadWebPageTask().execute("golf");
+        adapter = new ListViewAdapter(this, R.layout.hobby_list, listings);
+        listView.setAdapter(adapter);
 
 
-
-        switch(hobby_name.getStringExtra("hobby_name")){
-            case "golf":
-                ;
-
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        listings.clear();
+        //new DownloadWebPageTask().execute("golf");
+        switch (hobby_name.getStringExtra("hobby_name")){
+            case "Golf":
+                new DownloadWebPageTask().execute("Callaway Golf Clubs", "TaylorMade Golf Clubs");
+                new DownloadWebPageTask().execute("Nike Golf Shoes", "Puma Golf Shoes");
+                break;
+            case "Paddle Boarding":
+                break;
         }
         /*
         Clubs
@@ -119,45 +124,45 @@ public class HobbyActivity extends Activity{
         */
     }
 
-    private class DownloadWebPageTask extends AsyncTask<String, Void, Collection<ListingData>> {
-        private String subcat;
+    private class DownloadWebPageTask extends AsyncTask<String, Void, List<SubCategoryRow>> {
 
         @Override
-        protected Collection<ListingData> doInBackground(String... subcategory) {
-            subcat = subcategory[0];
-            String url= null;
-            switch (subcat){
-                case "golf":
+        protected List<SubCategoryRow> doInBackground(String... searchStrings) {
+            ArrayList<SubCategoryRow> listingDatas = new ArrayList<>();
+            for(String search : searchStrings){
+                DefaultHttpClient client = new DefaultHttpClient();
+                HttpGet httpGet = new HttpGet(getUrl(search));
+                try {
+                    HttpResponse execute = client.execute(httpGet);
+                    InputStream content = execute.getEntity().getContent();
+                    SubCategoryRow s = new SubCategoryRow(RunQueryOnXml.getListings(content));
+                    listingDatas.add(s);
 
-                    String search_string= "Callaway Golf Clubs";
-                    url = "?oauth_consumer_key=" + consumerKey + "&oauth_signature_method=PLAINTEXT&oauth_signature=" + consumerSecret + "&"
-                            + "search_string=" + URLEncoder.encode(search_string) + "&";
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
-            DefaultHttpClient client = new DefaultHttpClient();
-            //String s= URLEncoder.encode(url);
-            String host = "https://api.trademe.co.nz/v1/Search/General.xml" + url;
-            HttpGet httpGet = new HttpGet(host);
-            try {
-                HttpResponse execute = client.execute(httpGet);
-                InputStream content = execute.getEntity().getContent();
-
-                return RunQueryOnXml.getListings(content);
-
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            return listingDatas;
 
         }
 
         @Override
-        protected void onPostExecute(Collection<ListingData> li) {
-            updateData(li, subcat);
+        protected void onPostExecute(List<SubCategoryRow> li) {
+            updateData(li);
+        }
+
+        private String getUrl(String search){
+
+            String url = "?oauth_consumer_key=" + consumerKey + "&oauth_signature_method=PLAINTEXT&oauth_signature=" + consumerSecret + "&"
+                    + "search_string=" + URLEncoder.encode(search) + "&";
+            return "https://api.trademe.co.nz/v1/Search/General.xml" + url;
+
         }
     }
 
-    private void updateData(Collection<ListingData> newListings, String subcat){
-        listings.clear();
+    private void updateData(List<SubCategoryRow> newListings) {
         listings.addAll(newListings);
-        Toast.makeText(getApplicationContext(), listings.toString(), Toast.LENGTH_LONG).show();
+        adapter.notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(), String.valueOf(listings.size()), Toast.LENGTH_LONG).show();
     }
 }
