@@ -2,10 +2,12 @@ package sot.hobbyapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +43,7 @@ public class HobbyActivity extends Activity{
     ListViewAdapter adapter;
 
     String s = "https://api.trademe.co.nz/v1/Search/General.json?oauth_consumer_key=" + consumerKey + "&oauth_signature_method=PLAINTEXT&oauth_signature=" + consumerSecret + "&"
-            + "search_string=" + search_string + "&";
+            + "search_string=" + search_string + "&buy=BuyNow&";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +95,7 @@ public class HobbyActivity extends Activity{
 
         hobbyName.setName(hobby_name.getStringExtra("hobby_name"));
 
-        
+
     }
 
     private class DownloadWebPageTask extends AsyncTask<String, Void, List<SubCategoryRow>> {
@@ -151,4 +153,9 @@ public class HobbyActivity extends Activity{
         return false;
     }
 
+    public void buynow(View view){
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.trademe.co.nz/sports/surfing/stand-up-paddle-boards/auction-930232398.htm"));
+        startActivity(intent);
+    }
 }

@@ -69,7 +69,7 @@
             android:layout_height="40dp"
             android:id="@+id/itemone_buy_button"
             android:text="OPEN"
-            android:onClick="itemtwo_buynow"
+            android:onClick="buynow"
             android:background="@drawable/round_shape"
             android:layout_marginTop="35dp"
             android:textColor="@color/primary_dark"/>
@@ -121,7 +121,7 @@
             android:layout_height="40dp"
             android:id="@+id/itemtwo_buy_button"
             android:text="OPEN"
-            android:onClick="itemtwo_buynow"
+            android:onClick="buynow"
             android:background="@drawable/round_shape"
             android:layout_marginTop="35dp"
             android:textColor="@color/primary_dark"/>

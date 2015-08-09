@@ -46,13 +46,17 @@
                 android:layout_height="130dp"
                 android:background="@drawable/hobby4"
                 android:id="@+id/scuba"
-                android:layout_marginBottom="3dp" />
+                android:layout_marginBottom="3dp"
+                android:onClick="launchHobby"
+                />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:background="@drawable/hobby5"
                 android:id="@+id/ski"
-                android:layout_marginBottom="3dp"/>
+                android:layout_marginBottom="3dp"
+                android:onClick="launchHobby"
+                />
 
 
 
