@@ -34,6 +34,8 @@ public class ListViewAdapter extends ArrayAdapter<SubCategoryRow> {
 
         SubCategoryRow subCategoryRow = getItem(position);
 
+        TextView subcatName = (TextView) convertView.findViewById(R.id.subcat_name);
+
         TextView name1 = (TextView) convertView.findViewById(R.id.itemone_name);
         TextView price1 = (TextView) convertView.findViewById(R.id.itemone_price);
 
@@ -43,11 +45,15 @@ public class ListViewAdapter extends ArrayAdapter<SubCategoryRow> {
         CircleImageView img1 = (CircleImageView) convertView.findViewById(R.id.itemone_image);
         CircleImageView img2 = (CircleImageView) convertView.findViewById(R.id.itemtwo_image);
 
+        subcatName.setText(subCategoryRow.getSubcat());
+
         name1.setText(subCategoryRow.getRow1().getTitle());
         price1.setText(subCategoryRow.getRow1().getBuyNowPrice());
 
         name2.setText(subCategoryRow.getRow2().getTitle());
         price2.setText(subCategoryRow.getRow2().getBuyNowPrice());
+
+
 
 
         new DownloadImageTask(img1)

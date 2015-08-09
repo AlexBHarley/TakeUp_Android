@@ -56,8 +56,8 @@ public class HobbyActivity extends Activity{
         //new DownloadWebPageTask().execute("golf");
         switch (hobby_name.getStringExtra("hobby_name")){
             case "Golf":
-                new DownloadWebPageTask().execute("Callaway Golf Clubs", "TaylorMade Golf Clubs");
-                new DownloadWebPageTask().execute("Nike Golf Shoes", "Puma Golf Shoes");
+                new DownloadWebPageTask("Clubs").execute("Callaway Golf Clubs");
+                new DownloadWebPageTask("Shoes").execute("Nike Golf Shoes");
                 break;
             case "Paddle Boarding":
                 break;
@@ -125,6 +125,10 @@ public class HobbyActivity extends Activity{
     }
 
     private class DownloadWebPageTask extends AsyncTask<String, Void, List<SubCategoryRow>> {
+        private String subcat;
+        public DownloadWebPageTask(String subcategory) {
+            this.subcat = subcategory;
+        }
 
         @Override
         protected List<SubCategoryRow> doInBackground(String... searchStrings) {
@@ -135,7 +139,7 @@ public class HobbyActivity extends Activity{
                 try {
                     HttpResponse execute = client.execute(httpGet);
                     InputStream content = execute.getEntity().getContent();
-                    SubCategoryRow s = new SubCategoryRow(RunQueryOnXml.getListings(content));
+                    SubCategoryRow s = new SubCategoryRow(RunQueryOnXml.getListings(content), subcat);
                     listingDatas.add(s);
 
                 } catch (Exception e) {
