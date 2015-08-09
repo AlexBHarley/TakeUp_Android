@@ -45,8 +45,8 @@ public class FrontPageActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void launchHobby(View view){
-        switch (view.getId()){
+    public void launchHobby(View view) {
+        switch (view.getId()) {
             case R.id.golf:
                 Intent a = new Intent(this, HobbyActivity.class);
                 a.putExtra("hobby_name", "Golf");
@@ -71,4 +71,5 @@ public class FrontPageActivity extends Activity {
 
         }
     }
+
 }

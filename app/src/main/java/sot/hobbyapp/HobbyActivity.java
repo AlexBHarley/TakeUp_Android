@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,8 +52,9 @@ public class HobbyActivity extends Activity{
         adapter = new ListViewAdapter(this, R.layout.hobby_list, listings);
         listView.setAdapter(adapter);
 
+        //Create up button in action bar
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
         listings.clear();
         //new DownloadWebPageTask().execute("golf");
         switch (hobby_name.getStringExtra("hobby_name")){
@@ -165,4 +168,15 @@ public class HobbyActivity extends Activity{
         adapter.notifyDataSetChanged();
         Toast.makeText(getApplicationContext(), String.valueOf(listings.size()), Toast.LENGTH_LONG).show();
     }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return false;
+    }
+
 }
