@@ -61,25 +61,43 @@ public class HobbyActivity extends Activity{
             case "Golf":
                 new DownloadWebPageTask("Clubs").execute("Callaway Golf Clubs");
                 new DownloadWebPageTask("Shoes").execute("Nike Golf Shoes");
+                new DownloadWebPageTask("Bags").execute("Callaway Golf Bag");
+                new DownloadWebPageTask("Balls").execute("Titleist Golf Balls");
+                break;
+            case "Wind Surfing":
+                new DownloadWebPageTask("Boards").execute("Fanatic WindSurfing Board");
+                new DownloadWebPageTask("Sails").execute("NeilPryde windsurfing sail");
+                break;
+            case "Boxing":
+                new DownloadWebPageTask("Gloves").execute("Kango Boxing Gloves");
+                new DownloadWebPageTask("Bags").execute("Madison Punching Bag");
+                new DownloadWebPageTask("Protective Gear").execute("Boxing Head Gear");
                 break;
             case "Paddle Boarding":
+                new DownloadWebPageTask("Board").execute("SUP Paddle Board");
+                new DownloadWebPageTask("Paddle").execute("Carbon SUP Paddle shaft Adjustable");
+                new DownloadWebPageTask("Leash").execute("SUP Leash");
                 break;
-        }
-        /*
-        Clubs
-        "Callaway Golf Clubs"
-        "TaylorMade Golf Clubs"
-        Shoes
-        "Nike Golf Shoes"
-        "Puma Golf Shoes"
-        Bag
-        "Callaway Golf Bag"
-        "Nike Golf Bag"
-        Balls
-        "Titleist Golf Balls"
-        "Nike Golf Balls"
 
-   */
+            case "Diving":
+                new DownloadWebPageTask("BCD").execute("Aeris BCD");
+                new DownloadWebPageTask("Tank").execute("Steel SCUBA diving tank");
+                new DownloadWebPageTask("Regulator").execute("Atlantis Regulator");
+                new DownloadWebPageTask("BCD").execute("Aeris BCD");
+                new DownloadWebPageTask("Tank").execute("Steel SCUBA diving tank");
+                new DownloadWebPageTask("Regulator").execute("Atlantis Regulator");
+
+        }
+        
+        Fins
+        "Cressi SCUBA Fins"
+        "Mirage SCUBA Fins"
+        Mask & Snorkel
+        "Omer SCUBA Mask"
+        "Atlantis Dive Mask"
+        Weight belt
+        "Atlantis Weight belt"
+        "Pocket Weight Belt Scuba
 
 
         //Create new Action bar

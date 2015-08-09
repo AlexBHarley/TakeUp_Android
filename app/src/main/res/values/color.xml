@@ -3,5 +3,6 @@
     <color name="primary">#2196F3</color>
     <color name="primary_dark">#1565C0</color>
     <color name="accent">#F55555</color>
-
+    <color name="fbutton_color_concrete">#95a5a6</color>
+    <color name="fbutton_color_asbestos">#7f8c8d</color>
 </resources>

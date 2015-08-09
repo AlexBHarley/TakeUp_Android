@@ -53,9 +53,6 @@ public class ListViewAdapter extends ArrayAdapter<SubCategoryRow> {
         name2.setText(subCategoryRow.getRow2().getTitle());
         price2.setText(subCategoryRow.getRow2().getBuyNowPrice());
 
-
-
-
         new DownloadImageTask(img1)
                 .execute(subCategoryRow.getRow1().getPictureHref());
         new DownloadImageTask(img2)
