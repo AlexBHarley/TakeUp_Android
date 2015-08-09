@@ -2,21 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/subcategory"/>
+        android:id="@+id/subcat_name"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/itemone_image"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/itemone_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:border_width="2dp"
+            app:border_color="#FF000000"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,10 +44,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/itemtwo_image"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/itemtwo_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:border_width="2dp"
+            app:border_color="#FF000000"/>
 
         <TextView
             android:layout_width="wrap_content"
