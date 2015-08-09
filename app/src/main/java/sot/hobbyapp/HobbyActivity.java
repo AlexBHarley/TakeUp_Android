@@ -45,8 +45,8 @@ public class HobbyActivity extends Activity{
         setContentView(R.layout.activity_hobby);
         Intent hobby_name = getIntent();
 
-
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        //Create up navigation
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         new DownloadWebPageTask().execute("golf");
 

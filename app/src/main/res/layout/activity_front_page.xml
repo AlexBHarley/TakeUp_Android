@@ -5,7 +5,7 @@
     tools:context="sot.hobbyapp.FrontPageActivity"
     android:id="@+id/relative_background">
 
-   <ScrollView
+    <ScrollView
        android:layout_width="match_parent"
        android:layout_height="match_parent">
         <LinearLayout

@@ -19,6 +19,7 @@
         <activity android:name=".HobbyTest"
             />
         <activity android:name=".HobbyActivity"/>
+
     </application>
 
 </manifest>
