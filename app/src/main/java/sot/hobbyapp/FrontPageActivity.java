@@ -67,7 +67,16 @@ public class FrontPageActivity extends Activity {
                 d.putExtra("hobby_name", "Paddle Boarding");
                 startActivity(d);
                 break;
-
+            case R.id.scuba:
+                Intent k = new Intent(this, HobbyActivity.class);
+                k.putExtra("hobby_name", "Scuba Diving");
+                startActivity(k);
+                break;
+            case R.id.ski:
+                Intent z = new Intent(this, HobbyActivity.class);
+                z.putExtra("hobby_name", "Skiing");
+                startActivity(z);
+                break;
 
         }
     }

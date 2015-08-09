@@ -79,70 +79,21 @@ public class HobbyActivity extends Activity{
                 new DownloadWebPageTask("Leash").execute("SUP Leash");
                 break;
 
-            case "Diving":
+            case "Scuba Diving":
                 new DownloadWebPageTask("BCD").execute("Aeris BCD");
                 new DownloadWebPageTask("Tank").execute("Steel SCUBA diving tank");
                 new DownloadWebPageTask("Regulator").execute("Atlantis Regulator");
-                new DownloadWebPageTask("BCD").execute("Aeris BCD");
-                new DownloadWebPageTask("Tank").execute("Steel SCUBA diving tank");
-                new DownloadWebPageTask("Regulator").execute("Atlantis Regulator");
-
+                new DownloadWebPageTask("Fins").execute("Cressi SCUBA Fins");
+                new DownloadWebPageTask("Mask & Snorkel").execute("Omer SCUBA Mask");
+                new DownloadWebPageTask("Weight Belt").execute("Atlantis Weight belt");
         }
-        
-        Fins
-        "Cressi SCUBA Fins"
-        "Mirage SCUBA Fins"
-        Mask & Snorkel
-        "Omer SCUBA Mask"
-        "Atlantis Dive Mask"
-        Weight belt
-        "Atlantis Weight belt"
-        "Pocket Weight Belt Scuba
-
 
         //Create new Action bar
         getActionBar().setTitle(hobby_name.getStringExtra("hobby_name"));
 
         hobbyName.setName(hobby_name.getStringExtra("hobby_name"));
 
-        HobbyObject PaddleBoard = new HobbyObject();
-        HobbyObject Paddle = new HobbyObject();
-        HobbyObject Leash = new HobbyObject();
-        /* All of these will be calls to the website
-        Each for Title, Price, Picture
-         */
-        PaddleBoard.setNameOne("Starboard Atlas Paddle");
-        PaddleBoard.setPriceOne("from $899");
-        //PaddleBoard.setImageOne();
-        PaddleBoard.setNameTwo("Skull Paddleboard");
-        PaddleBoard.setPriceTwo("from $1299");
-       //PaddleBoard.setImageTwo();
-
-        Paddle.setNameOne("Bote Axe Paddle");
-        Paddle.setPriceOne("from $499");
-        //Paddle.setImageOne();
-        Paddle.setNameTwo("Pacific Paddle");
-        Paddle.setPriceTwo("from $299");
-        //Paddle.setImageTwo();
-
-        Leash.setNameOne("Keeper Combo Kit");
-        Leash.setPriceOne("from $29");
-        //Leash.setImageOne();
-        Leash.setNameTwo("SUP Surf Leash");
-        Leash.setPriceTwo("from $49");
-        //Leash.setImageTwo();
-
-        categories.add(PaddleBoard);
-        categories.add(Paddle);
-        categories.add(Leash);
-        hobbyName.setSubCategories(categories);
-
-        /* Some loop of getView
-        hobbyName.getCategories(categories).getView();
-
-
-
-        */
+        
     }
 
     private class DownloadWebPageTask extends AsyncTask<String, Void, List<SubCategoryRow>> {
@@ -188,7 +139,6 @@ public class HobbyActivity extends Activity{
     private void updateData(List<SubCategoryRow> newListings) {
         listings.addAll(newListings);
         adapter.notifyDataSetChanged();
-        Toast.makeText(getApplicationContext(), String.valueOf(listings.size()), Toast.LENGTH_LONG).show();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
