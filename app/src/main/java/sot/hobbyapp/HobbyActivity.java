@@ -37,8 +37,8 @@ public class HobbyActivity extends Activity{
     List<HobbyObject> categories = new ArrayList<>();
     final List<SubCategoryRow> listings = new ArrayList<>();
     ListView listView;
-    final static String consumerKey = "D878095ABE608E6AA6E5C47EBAFAC669";
-    static final String consumerSecret = "8745D63A410A399375192C6960298D49%26";
+    final static String consumerKey = "113022C000B92938E5FDDE6AD1A657A8";
+    static final String consumerSecret = "14ECEC2BAD685C3A8C599A0909AE2705%26";
     String search_string;
     ListViewAdapter adapter;
 
@@ -121,7 +121,6 @@ public class HobbyActivity extends Activity{
                 }
             }
             return listingDatas;
-
         }
 
         @Override
